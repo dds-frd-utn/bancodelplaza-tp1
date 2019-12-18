@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>El Banco de la Plaza</title>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/generic.js"></script>
+	    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet"> 
+        
+        <script>
+            $(document).ready(function(){
+                $(".baseURL").text( 'http://'+window.location.host+'/elbancodelplaza' );
+            });
+        </script>
+
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="img/encabezado.jpeg" width="1000" height="200" style="margin-left:10%">
+                </div>
+            </div>
+            <div class="row">
+                <h2>Bienvenidos todos!</h2>
+                <p>Sean bienvenidos al banco numero 19 de nuestro plano pais, ESFEROPOLIS.</p>
+            </div>
+            <div class="row">
+                <h2>CONOCE NUESTRA DOCUMENTACION!</h2>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>clients</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Conocelos a Todos!</h4>
+                    <p>Para conocer a todos y cada uno de ellos, debes ingresar usando el metodo "Get" en la URL:<pre><code><a href="rest/clients/"><span class="baseURL"></span>/rest/clients/</a></code></pre></p>
+                </div>
+                <div class="col">
+                    <h4>Espia a tu pareja! YA YA YA</h4>
+                    <p>Para espiar a esa persona que tanto "amas" llama a la siguiente URL usando su número de Documento<pre><code><a href="rest/clients/1"><span class="baseURL"></span>/rest/clients/<b>{DU}</b></a></code></pre> La respuesta a esta llamada mostrara su informacion personal! En forma de JSON.</p>
+                    <p>Por ejemplo, el link anterior devuelve el siguiente resultado:</p>
+                    <pre><code class="json">{<br>&nbsp;&nbsp;"apellido":"Chaves",<br>&nbsp;&nbsp;"fechaNacimiento":"1995-01-03T03:00:00Z[UTC]",<br>&nbsp;&nbsp;"idCliente":1,<br>&nbsp;&nbsp;"mail":"chavesagustin@hotmail.com",<br>&nbsp;&nbsp;"nombre":"Agustin Elias",<br>&nbsp;&nbsp;"situacion":"normal",<br>&nbsp;&nbsp;"telefono":3329474090<br>}</code></pre>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>Y que hay con las cuentas?</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4>Registrate en un simple paso!</h4>
+                    <p>Para registrar tu propia cuenta para operar, debes llamar al metodo POST siguiendo el siguiente enlace: <pre><code><a href="rest/accounts/"><span class="baseURL"></span>/rest/accounts/</a></code></pre> enviando un JSON <pre><code class="json">{<br>&nbsp;&nbsp;"Titular": "Su ID personal"<br>}</code></pre></p>
+                    <p>La respuesta a esta llamada es un identificador del número de cuenta creada</p>
+                </div>
+                <div class="col">
+                    <h4>Consultar Cuenta</h4>
+                    <p>Puede consultar cualquiera de sus cuentas o la de algun conocido usando la siguiente URL:<pre><code><a href="rest/accounts/1"><span class="baseURL"></span>/rest/accounts/{ID}</a></code></pre> enviando el ID de la cuenta que se desea obtener.</p>
+                <p>La respuesta es un JSON como el que sigue<pre><code class="json">{<br>&nbsp;&nbsp;"casa":19<br>&nbsp;&nbsp;"cbu":119<br>&nbsp;&nbsp;"fechaAlta":"2019-08-23T03:00:00Z[UTC]"<br>&nbsp;&nbsp;"idCliente":1<br>&nbsp;&nbsp;"idCuenta":1<br>}</code></pre></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2 id="transferencias">Impuesto</h2>
+                    <p>Nuestro banco esta inscripto a los siguientes impuestos, conocelos con la siguiente URL:<pre><code><a href="rest/Impuestos"><span class="baseURL"></span>/rest/Impuestos</a></code></pre></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2 id="transferencias">transactions</h2>
+                    <p>Nuestro banco acepta el uso de transferencias para operar, ya sea para pagar algun servicio o transferir dinero a tus padres, abuelos, hijos legitimos, no legitimos y por supuesto a tu pareja o tu amante! Conoce todas las transferencias que hemos realizado con el siguiente link:<pre><code><a href="rest/transactions"><span class="baseURL"></span>/rest/transactions</a></code></pre></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2 id="transferencias">bonds</h2>
+                    <p>Consulta la disponibilidad de los bonos que poseemos con la siguiente URL:<pre><code><a href="rest/bonds"><span class="baseURL"></span>/rest/bonds</a></code></pre></p>
+                </div>
+            </div>
+    </body>
+</html>
